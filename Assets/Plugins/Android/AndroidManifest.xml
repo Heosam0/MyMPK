@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.Heosam.myMpk"
+    android:installLocation="preferExternal"
+    android:versionCode="11"
+    android:versionName="1.0.2">
+
+    <uses-sdk
+        android:minSdkVersion="30"
+        android:targetSdkVersion="34" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- Установка required="false" для всех необязательных функций -->
+    <uses-feature
+        android:glEsVersion="0x00030000"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.type.pc"
+        android:required="false" />
+    <uses-feature
+        android:name="android.software.home_screen"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.touchscreen.multitouch"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.touchscreen.multitouch.distinct"
+        android:required="false" />
+
+    <application
+        android:extractNativeLibs="true"
+        android:icon="@mipmap/app_icon"
+        android:label="@string/app_name"
+        android:hardwareAccelerated="false">
+
+        <meta-data
+            android:name="unity.splash-mode"
+            android:value="0" />
+        <meta-data
+            android:name="unity.splash-enable"
+            android:value="true" />
+        <meta-data
+            android:name="unity.launch-fullscreen"
+            android:value="true" />
+        <meta-data
+            android:name="unity.allow-resizable-window"
+            android:value="false" />
+        <meta-data
+            android:name="notch.config"
+            android:value="portrait|landscape" />
+        <meta-data
+            android:name="unity.auto-report-fully-drawn"
+            android:value="true" />
+        <meta-data
+            android:name="unityplayer.SkipPermissionsDialog"
+            android:value="true" />
+        <meta-data
+            android:name="com.google.ar.core"
+            android:value="optional" />
+        <meta-data
+            android:name="com.google.ar.core.min_apk_version"
+            android:value="240220000" />
+
+        <activity
+            android:name="com.unity3d.player.UnityPlayerActivity"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density"
+            android:exported="true"
+            android:hardwareAccelerated="false"
+            android:launchMode="singleTask"
+            android:resizeableActivity="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/UnityThemeSelector">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <meta-data
+                android:name="unityplayer.UnityActivity"
+                android:value="true" />
+            <meta-data
+                android:name="notch_support"
+                android:value="true" />
+        </activity>
+
+        <activity
+            android:name="com.google.ar.core.InstallActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.Material.Light.Dialog.Alert" />
+    </application>
+</manifest>
